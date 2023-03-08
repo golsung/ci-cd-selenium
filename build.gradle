@@ -15,8 +15,33 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
-tasks.named('test') {
+jar {
+    enabled = false
+}
+
+task acceptanceTest(type: Test) {
+	include '**/acceptanceTests/**'
+	exclude '**/apiTests/**'
+	exclude '**/unitTests/**'
+	systemProperty "calculator.url", System.getProperty("calculator.url")
+	useJUnitPlatform()
+}
+
+task apiTest(type: Test) {
+	include '**/apiTests/**'
+	exclude '**/acceptanceTests/**'
+	exclude '**/unitTests/**'
+	systemProperty "calculator.url", System.getProperty("calculator.url")
+	useJUnitPlatform()
+}
+
+test {
+	exclude '**/apiTests/**'
+	exclude '**/acceptanceTests/**'
+	systemProperty "calculator.url", System.getProperty("calculator.url")
 	useJUnitPlatform()
 }
