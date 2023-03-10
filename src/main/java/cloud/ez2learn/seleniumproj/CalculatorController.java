@@ -11,7 +11,7 @@ class CalculatorController {
     @GetMapping("/sum")
     public int sum(@RequestParam("a") int a, @RequestParam("b") int b) {
         Calculator calculator = new Calculator(a, b);
-        return calculator.getResult();
+        return calculator.getSum();
     }
 
     // @RequestMapping("/diff")
