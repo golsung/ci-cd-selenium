@@ -1,22 +1,23 @@
 package cloud.ez2learn.seleniumproj;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api")
 class CalculatorController {
 
-    @RequestMapping("/")
-    public String home() {
-        return "Welcome GitHub Action Home!";
-    }
+//    @PostMapping("/sum")
+//    public int sum(@RequestBody Operand operand) {
+//       Calculator calculator = new Calculator(operand.getA1(), operand.getA2());
+//        return calculator.getResult();
+//    }
 
-    @RequestMapping("/sum")
+    @GetMapping("/sum")
     public int sum(@RequestParam("a") int a, @RequestParam("b") int b) {
         Calculator calculator = new Calculator(a, b);
-
-        return calculator.getSum();
+        return calculator.getResult();
     }
 
     // @RequestMapping("/diff")

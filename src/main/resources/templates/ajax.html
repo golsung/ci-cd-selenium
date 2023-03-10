@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Bootstrap Button Alignment</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+		  href=
+				  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src=
+					"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script src=
+					"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+	</script>
+	<script src=
+					"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-light bg-info">
+		<div class="container">
+			<div class="navbar-header">
+				<h2>Learn CI/CD at Ez2learn Cloud</h2>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container pt-5">
+		<h1 style="text-align:center;color:green;">
+			계산을 하자!
+		</h1>
+		<form>
+			<div class="form-group" id="calc-form">
+				<label for="">피연산자 1:</label>
+				<input class="form-control"
+					   type="text"
+					   id="operand1"
+					   placeholder="Input One Operand Here">
+			</div>
+			<div class="form-group">
+				<label for="">피연산자 2:</label>
+				<input class="form-control"
+					   type="text"
+					   id="operand2"
+					   placeholder="Input Another Operand Here">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-success btn-lg float-right"
+						type="submit" id="btn-add">
+					Add
+				</button>
+			</div>
+
+			<div class="form-group pt-5" id="result">
+				결과가 나옵니다.
+			</div>
+		</form>
+	</div>
+
+	<div class="container">
+		<footer class="bg-info text-center text-lg-start fixed-bottom">
+			<p>
+				<h3>Hansung University 2023</h3>
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+
+$(document).ready(function () {
+	$("#btn-add").click(doCalc);
+});
+
+function doCalc() {
+    var operand1 = $("#operand1").val();
+    var operand2 = $("#operand2").val();
+
+    $("#btn-add").prop("disabled", true);
+
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/api/sum?" + "a=" + operand1 + "&b=" + operand2,
+        dataType: 'text',
+        success: function (data) {
+
+            $('#result').text(data);
+
+            console.log("SUCCESS : ", data);
+            $("#btn-add").prop("disabled", false);
+
+        },
+        error: function (e) {
+        	$('#result').text(e);
+            console.log("ERROR : ", e);
+            $("#btn-add").prop("disabled", false);
+
+        }
+    });
+
+}
+</script>
+
+</body>
+</html>

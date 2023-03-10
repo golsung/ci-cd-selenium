@@ -25,7 +25,7 @@ class CalculatorApplicationTests {
 	@Test
 	void goHome() {
 		String result = testRestTemplate.getForObject(server+":"+randomServerPort, String.class);
-		assertEquals("Welcome GitHub Action Home!", result);
+		assertEquals("adder", result);
 	}
 
 	@Test

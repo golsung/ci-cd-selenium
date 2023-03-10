@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="postData">
+    데이터 전송
+</button>
+<p id="text">here</p>
+<script>
+    const $postDataButton = document.querySelector("#postData")
+
+    const postData = event => {
+        console.log("데이터 전송");
+        fetch("localhost:8080/sum").then((response) =>
+            console.log(response)
+        );
+        }
+    $postDataButton.addEventListener("click", postData);
+</script>
+</body>
+</html>
