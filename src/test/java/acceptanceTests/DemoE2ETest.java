@@ -1,6 +1,5 @@
 package acceptanceTests;
 
-import cloud.ez2learn.seleniumproj.SeleniumProjApplication;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,19 +11,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-//        classes = SeleniumProjApplication.class)
-@SpringBootTest(classes = SeleniumProjApplication.class)
 public class DemoE2ETest {
+
         WebDriver driver;
-        final String  SERVER_URL = System.getProperty("calculator.url");
+        private final String  SERVER_URL = System.getProperty("calculator.url");
 
         @BeforeEach
         public void setUp() {
@@ -47,6 +43,7 @@ public class DemoE2ETest {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             driver.get(SERVER_URL);
+
         }
         @AfterEach
         public void tearDown() {
