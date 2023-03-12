@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
 		classes = SeleniumProjApplication.class)
-class CalculatorApplicationTests {
+class CalculatorApiTests {
 
 	@Autowired
 	TestRestTemplate testRestTemplate;
@@ -25,14 +27,20 @@ class CalculatorApplicationTests {
 	@Test
 	void goHome() {
 		String result = testRestTemplate.getForObject(server+":"+randomServerPort, String.class);
-		assertEquals("adder", result);
+		assertTrue(result.contains("Learn CI/CD at Ez2Learn Cloud"));
 	}
 
 	@Test
 	void getSum() {
-		int result = testRestTemplate.getForObject(server+":" + randomServerPort + "/sum?a=5&b=10", Integer.class);
+		int result = testRestTemplate.getForObject(server+":" + randomServerPort + "/api/sum?a=5&b=10", Integer.class);
 		assertEquals(15, result);
 	}
+
+//	@Test
+//	void getSum() {
+//		ResponseEntity<Integer> result = testRestTemplate.getForEntity(server+":" + randomServerPort + "/api/sum?a=5&b=10", Integer.class);
+//		assertEquals(15, result.getBody());
+//	}
 
 	// @Test
 	// void getDiff() {
