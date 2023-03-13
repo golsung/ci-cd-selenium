@@ -45,6 +45,10 @@ jobs:
           java-version: '11'
       - name: Java Check
         run: java --version
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: build jar
+        run: ./gradlew build
       - name: setup chrome web driver
         uses: nanasess/setup-chromedriver@v1
       - run: |
