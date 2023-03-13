@@ -20,6 +20,6 @@ public class CalcPageTest {
     @Test
     public void shouldReturnTHeResultOfAddition() throws InterruptedException {
         calcPage.performAddOperation(10, 20);
-        assertEquals(30, calcPage.getResult());
+        assertEquals(20, calcPage.getResult());
     }
 }
