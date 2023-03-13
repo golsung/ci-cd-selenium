@@ -44,7 +44,7 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
       - name: Java Check
-          run: java --version
+        run: java --version
       - name: setup chrome web driver
         uses: nanasess/setup-chromedriver@v1
       - run: |
