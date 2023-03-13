@@ -57,9 +57,10 @@ jobs:
           ./stop.sh
           - name: clean staging env
       - name: start application
+        if: always()
         run: |
           chmod +x ./start.sh
-          ./stop.sh
+          ./start.sh
           
           #deploy:
           # runs-on: ubuntu-latest
