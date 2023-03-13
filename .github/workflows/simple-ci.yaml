@@ -27,7 +27,7 @@ jobs:
       - name: Java Check
         run: java --version
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x ./gradlew
       - name: Unit Test
         run: ./gradlew unitTest
       - name: Api Test
@@ -46,7 +46,7 @@ jobs:
       - name: Java Check
         run: java --version
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x ./gradlew
       - name: build jar
         run: ./gradlew build
       - name: setup chrome web driver
@@ -60,11 +60,11 @@ jobs:
           chmod +x ./stop.sh
           ./stop.sh
       - name: start application
-        if: always()
         run: |
           chmod +x ./start.sh
           ./start.sh
-          
+      - name: e2e test
+        run: ./gradlew e2eTest -Dcalculator.url=http://localhost:8080
           #deploy:
           # runs-on: ubuntu-latest
 
