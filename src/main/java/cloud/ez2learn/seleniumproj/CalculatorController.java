@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-class CalculatorController {
+public class CalculatorController {
 
     @GetMapping("/sum")
     public int sum(@RequestParam("a") int a, @RequestParam("b") int b) {

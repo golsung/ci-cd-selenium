@@ -1,4 +1,4 @@
-package acceptanceTests;
+package e2eTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

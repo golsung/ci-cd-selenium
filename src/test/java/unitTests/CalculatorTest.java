@@ -11,17 +11,29 @@ import org.junit.jupiter.api.BeforeEach;
 
 class CalculatorTest {
 
-    private Calculator calculator;
+//    private Calculator calculator;
 
-    @BeforeEach
-    void setUp() {
-        calculator = new Calculator(2, 3);
-    }
+//    @BeforeEach
+//    void setUp() {
+//
+//        calculator = new Calculator();
+//    }
 
     @Test
-    public void testSum() {
+    public void testSum1() {
+        Calculator calculator = new Calculator();
+        calculator.setLeftOperand(2);
+        calculator.setRightOperand(3);
         assertEquals(5, calculator.getSum());
     }
+
+//    @Test
+//    public void testSum2() {
+//        Calculator calculator = new Calculator();
+//        calculator.setLeftOperand(12);
+//        calculator.setRightOperand(13);
+//        assertEquals(25, calculator.getSum());
+//    }
 
     // @Test
     // public void testDifference() {

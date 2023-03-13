@@ -30,8 +30,8 @@ jar {
     enabled = false
 }
 
-task acceptanceTest(type: Test) {
-	include '**/acceptanceTests/**'
+task e2eTest(type: Test) {
+	include '**/e2eTests/**'
 	exclude '**/apiTests/**'
 	exclude '**/unitTests/**'
 	systemProperty "calculator.url", System.getProperty("calculator.url")

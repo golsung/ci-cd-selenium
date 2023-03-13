@@ -21,7 +21,14 @@ public class Calculator {
         return this.result;
     }
 
-    // public int getDifference() {
+    public void setLeftOperand(int a) {
+        this.a = a;
+    }
+
+    public void setRightOperand(int b) {
+        this.b = b;
+    }
+// public int getDifference() {
     //     this.result = a - b;
     //     return this.result;
     // }
