@@ -55,7 +55,6 @@ jobs:
         run: |
           chmod +x ./stop.sh
           ./stop.sh
-          - name: clean staging env
       - name: start application
         if: always()
         run: |
