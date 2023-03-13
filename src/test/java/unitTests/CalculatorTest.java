@@ -27,17 +27,17 @@ class CalculatorTest {
         assertEquals(5, calculator.getSum());
     }
 
-//    @Test
-//    public void testSum2() {
-//        Calculator calculator = new Calculator();
-//        calculator.setLeftOperand(12);
-//        calculator.setRightOperand(13);
-//        assertEquals(25, calculator.getSum());
-//    }
+    @Test
+    public void testSum2() {
+        Calculator calculator = new Calculator();
+        calculator.setLeftOperand(12);
+        calculator.setRightOperand(13);
+        assertEquals(25, calculator.getSum());
+    }
 
-    // @Test
-    // public void testDifference() {
-    //     assertEquals(-1, calculator.getDifference());
-    // }
+     @Test
+     public void testDifference() {
+         assertEquals(-1, calculator.getDifference());
+     }
 
 }

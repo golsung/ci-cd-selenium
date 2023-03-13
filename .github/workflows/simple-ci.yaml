@@ -29,7 +29,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Unit Test
-        run: ./gradlew unitTest -Dcalculator.url=http://localhost
+        run: ./gradlew unitTest
       - name: Api Test
         run: ./gradlew apiTest -Dcalculator.url=http://localhost
           #deploy:
