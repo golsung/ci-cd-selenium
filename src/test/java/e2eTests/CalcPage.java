@@ -74,4 +74,8 @@ public class CalcPage {
         driver.get(serverUrl);
 
     }
+
+    public void quit() {
+        driver.quit();
+    }
 }

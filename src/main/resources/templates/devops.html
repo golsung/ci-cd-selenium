@@ -34,14 +34,14 @@
 		</h1>
 		<form>
 			<div class="form-group" id="calc-form">
-				<label for="">피연산자 1:</label>
+				<label for="operand1">피연산자 1:</label>
 				<input class="form-control"
 					   type="text"
 					   id="operand1"
 					   placeholder="Input One Operand Here">
 			</div>
 			<div class="form-group">
-				<label for="">피연산자 2:</label>
+				<label for="operand2">피연산자 2:</label>
 				<input class="form-control"
 					   type="text"
 					   id="operand2"
@@ -72,10 +72,11 @@
 	<script type="text/javascript">
 
 $(document).ready(function () {
-	$("#btn-add").click(doCalc);
+	$("#btn-add").click(doAdd);
 });
 
-function doCalc() {
+
+function doAdd() {
     var operand1 = $("#operand1").val();
     var operand2 = $("#operand2").val();
 
