@@ -17,7 +17,7 @@ public class Calculator {
 
 
     public int getSum() {
-        this.result = a + b;
+        this.result = a - b;
         return this.result;
     }
 
