@@ -36,11 +36,18 @@ class CalculatorTest {
     }
 
      @Test
-     public void testDifference() {
+     public void testDifference1() {
          Calculator calculator = new Calculator();
          calculator.setLeftOperand(12);
          calculator.setRightOperand(13);
          assertEquals(-1, calculator.getDifference());
      }
+
+    public void testDifference2() {
+        Calculator calculator = new Calculator();
+        calculator.setLeftOperand(0);
+        calculator.setRightOperand(5);
+        assertEquals(-5, calculator.getDifference());
+    }
 
 }

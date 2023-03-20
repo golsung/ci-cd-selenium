@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 //@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
 		classes = SeleniumProjApplication.class)
-class CalculatorApiTests {
+class
+CalculatorApiTests {
 
 	@Autowired
 	TestRestTemplate testRestTemplate;
