@@ -35,12 +35,12 @@ class CalculatorTest {
         assertEquals(25, calculator.getSum());
     }
 
-//     @Test
-//     public void testDifference() {
-//         Calculator calculator = new Calculator();
-//         calculator.setLeftOperand(12);
-//         calculator.setRightOperand(13);
-//         assertEquals(-1, calculator.getDifference());
-//     }
+     @Test
+     public void testDifference() {
+         Calculator calculator = new Calculator();
+         calculator.setLeftOperand(12);
+         calculator.setRightOperand(13);
+         assertEquals(-1, calculator.getDifference());
+     }
 
 }

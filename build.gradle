@@ -49,7 +49,7 @@ task apiTest(type: Test) {
 task unitTest(type: Test) {
 	exclude '**/apiTests/**'
 	exclude '**/e2eTests/**'
-	include '**/apiTests/**'
+	include '**/unitTests/**'
 	systemProperty "calculator.url", System.getProperty("calculator.url")
 	useJUnitPlatform()
 }
