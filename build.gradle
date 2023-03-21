@@ -2,7 +2,13 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.9'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+//	id 'jacoco'
 }
+
+//jacoco {
+//	toolVersion = "0.8.8"
+////	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+//}
 
 group = 'cloud.ez2learn'
 version = '0.0.1-SNAPSHOT'
@@ -30,6 +36,15 @@ jar {
     enabled = false
 }
 
+//jacocoTestReport {
+//	reports {
+//		xml.required = false
+//		csv.required = false
+//		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+//	}
+//}
+
+
 task e2eTest(type: Test) {
 	include '**/e2eTests/**'
 	exclude '**/apiTests/**'
@@ -50,6 +65,38 @@ task unitTest(type: Test) {
 	exclude '**/apiTests/**'
 	exclude '**/e2eTests/**'
 	include '**/unitTests/**'
-	systemProperty "calculator.url", System.getProperty("calculator.url")
+//	systemProperty "calculator.url", System.getProperty("calculator.url")
 	useJUnitPlatform()
 }
+
+//jacocoTestReport {
+//	finalizedBy 'jacocoTestCoverageVerification'
+//	dependsOn test // tests are required to run before generating the report
+//}
+
+//jacocoTestCoverageVerification {
+//	violationRules {
+//		rule {
+//			element = 'CLASS'
+//
+//			limit {
+//				counter = 'LINE'
+//				value = 'COVEREDRATIO'
+//				minimum = 0.60
+//
+//			}
+//			excludes = ['*.SeleniumProjApplication']
+//
+//		}
+//	}
+//}
+
+//test {
+////	exclude '**/apiTests/**'
+//	exclude '**/e2eTests/**'
+//	systemProperty "calculator.url", System.getProperty("calculator.url")
+//	finalizedBy jacocoTestReport // report is always generated after tests run
+//	useJUnitPlatform()
+//}
+
+
