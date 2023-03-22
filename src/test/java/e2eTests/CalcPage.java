@@ -57,7 +57,7 @@ public class CalcPage {
 //       Windows System.setProperty("webdriver.chrome.driver", "C:\\usr\\selenium\\chromedriver.exe");
 //            WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-extensions");
