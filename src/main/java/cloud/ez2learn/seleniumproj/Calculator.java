@@ -29,10 +29,10 @@ public class Calculator {
         this.b = b;
     }
 
-    public int getDifference() { //
-         this.result = a - b;
-         return this.result;
-    }
+//    public int getDifference() { //
+//         this.result = a - b;
+//         return this.result;
+//    }
 
 }
 
