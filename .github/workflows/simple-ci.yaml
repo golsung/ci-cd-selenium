@@ -1,4 +1,4 @@
-name: simple example for continuous integration
+name: simple example for continuous integration #conflicts
 
 on:
   push:
