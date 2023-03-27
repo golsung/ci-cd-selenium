@@ -31,7 +31,7 @@ jobs:
       - name: Unit Test
         run: ./gradlew unitTest #ok
       - name: Api Test
-        run: ./gradlew apiTest -Dcalculator.url=http://localhost //ok
+        run: ./gradlew apiTest -Dcalculator.url=http://localhost #ok
 #  e2e-test:
 #    runs-on: ubuntu-latest
 #    needs: unit-api-test
