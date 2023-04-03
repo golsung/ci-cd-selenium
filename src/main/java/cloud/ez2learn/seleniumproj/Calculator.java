@@ -4,7 +4,7 @@ public class Calculator {
 
     private int a;
     private int b;
-   // private int sum;
+   // private int sum; //ok
     private int result;
 
     public Calculator() {
